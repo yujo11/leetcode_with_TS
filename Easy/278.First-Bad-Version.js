@@ -19,10 +19,10 @@ var solution = function (isBadVersion) {
    */
 
   return function (n) {
-    if (n === 1) return n;
+    if (n === 1) return n
 
     while (n--) {
-      if (!isBadVersion(n)) return n + 1;
+      if (!isBadVersion(n)) return n + 1
     }
-  };
-};
+  }
+}

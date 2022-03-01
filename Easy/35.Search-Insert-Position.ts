@@ -5,22 +5,22 @@
 */
 
 function searchInsert_1(nums: number[], target: number): number {
-  let left = 0;
-  let right = nums.length - 1;
+  let left = 0
+  let right = nums.length - 1
 
   while (left <= right) {
-    let mid = left + Math.floor(right / 2);
+    let mid = left + Math.floor(right / 2)
 
     if (target > nums[mid]) {
-      left = mid + 1;
+      left = mid + 1
     } else if (target < nums[mid]) {
-      right = mid - 1;
+      right = mid - 1
     } else if (target === nums[mid]) {
-      return mid;
+      return mid
     }
   }
 
-  return left;
+  return left
 }
 
 /*
@@ -28,28 +28,28 @@ function searchInsert_1(nums: number[], target: number): number {
 */
 
 interface Props {
-  nums: number[];
-  target: number;
-  left: number;
-  right: number;
+  nums: number[]
+  target: number
+  left: number
+  right: number
 }
 
 function recursive({ nums, target, left, right }: Props): number {
-  let mid = Math.floor((left + right) / 2);
+  let mid = Math.floor((left + right) / 2)
 
-  if (left > right) return left;
+  if (left > right) return left
 
-  if (nums[mid] === target) return mid;
+  if (nums[mid] === target) return mid
 
   if (nums[mid] > target) {
-    return recursive({ nums, target, left: left, right: mid - 1 });
+    return recursive({ nums, target, left: left, right: mid - 1 })
   }
 
   if (nums[mid] < target) {
-    return recursive({ nums, target, left: mid + 1, right: right });
+    return recursive({ nums, target, left: mid + 1, right: right })
   }
 }
 
 function searchInsert(nums: number[], target: number): number {
-  return recursive({ nums, target, left: 0, right: nums.length - 1 });
+  return recursive({ nums, target, left: 0, right: nums.length - 1 })
 }
