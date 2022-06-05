@@ -6,7 +6,7 @@
   "author": "yujo <yujo.dev@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watch"
   },
   "devDependencies": {
     "@types/jest": "^28.1.1",
