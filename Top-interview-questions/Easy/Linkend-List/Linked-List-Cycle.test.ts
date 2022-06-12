@@ -1,3 +1,5 @@
+export {}
+
 class ListNode {
   val: number | null
   next: ListNode | null
