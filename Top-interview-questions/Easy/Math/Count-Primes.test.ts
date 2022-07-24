@@ -27,24 +27,23 @@ function countPrimesTimeLimitExceed(n: number): number {
  */
 
 function countPrimes(n: number): number {
-  if (n < 2) return 0
+  const isPrime = new Array(n).fill(true)
 
-  const primeArray = [true, true]
+  isPrime[1] = false
 
-  for (let i = 2; i < Math.sqrt(n); i++) {
-    if (!primeArray[i]) {
-      for (let j = 2; j * i < n; j++) {
-        primeArray[i * j] = true
-      }
+  for (let i = 2; i * i < n; i++) {
+    if (!isPrime[i]) {
+      continue
+    }
+
+    for (let j = i * i; j < n; j += i) {
+      isPrime[j] = false
     }
   }
 
-  let count = 0
-  for (let i = 2; i < primeArray.length; i++) {
-    if (!primeArray[i]) count++
-  }
+  const result = isPrime.filter(Boolean).length
 
-  return count
+  return result === 0 ? 0 : result - 1
 }
 
 describe('countPrimes', () => {
@@ -58,5 +57,9 @@ describe('countPrimes', () => {
 
   test('case 3', () => {
     expect(countPrimes(1)).toEqual(0)
+  })
+
+  test('edge case 1', () => {
+    expect(countPrimes(3)).toEqual(1)
   })
 })
