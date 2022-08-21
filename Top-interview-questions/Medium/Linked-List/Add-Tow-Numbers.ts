@@ -58,7 +58,7 @@ function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | nul
   let result = currentNode
   let carry = 0
 
-  while (l1 || l2) {
+  while (l1 || l2 || carry) {
     const sum = (l1?.val ?? 0) + (l2?.val ?? 0) + carry
 
     carry = Math.floor(sum / 10)
@@ -68,10 +68,6 @@ function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | nul
 
     l1 = l1 ? l1.next : null
     l2 = l2 ? l2.next : null
-  }
-
-  if (carry > 0) {
-    currentNode.next = new ListNode(carry)
   }
 
   return result.next
