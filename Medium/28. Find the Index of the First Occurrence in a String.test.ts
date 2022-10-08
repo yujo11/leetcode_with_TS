@@ -38,7 +38,7 @@ export {}
  */
 
 // function strStr(haystack: string, needle: string): number {
-//   return haystack.indexOf(needle)
+//   return haystack.includes(needle) ? haystack.indexOf(needle) : -1
 // }
 
 /**
@@ -46,7 +46,7 @@ export {}
  */
 
 // function strStr(haystack: string, needle: string): number {
-//   return haystack.search(needle)
+//   return haystack.indexOf(needle)
 // }
 
 /**
@@ -62,7 +62,7 @@ export {}
  */
 
 // function strStr(haystack: string, needle: string): number {
-//   return haystack.includes(needle) ? haystack.indexOf(needle) : -1
+//   return haystack.search(needle)
 // }
 
 /**
