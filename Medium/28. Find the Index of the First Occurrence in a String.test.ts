@@ -1,7 +1,7 @@
 export {}
 
 /**
- * Solution 0
+ * Solution 1 - Brute Force
  */
 
 //  function strStr(haystack: string, needle: string): number {
@@ -20,7 +20,7 @@ export {}
 //   }
 
 /**
- * Solution 1
+ * Solution 2 - Brute Force with "slice"
  */
 
 // function strStr(haystack: string, needle: string): number {
@@ -34,7 +34,7 @@ export {}
 // }
 
 /**
- * Solution 2
+ * Solution 3  - include
  */
 
 // function strStr(haystack: string, needle: string): number {
@@ -42,7 +42,7 @@ export {}
 // }
 
 /**
- * Solution 3
+ * Solution 4 - indexOf
  */
 
 // function strStr(haystack: string, needle: string): number {
@@ -50,7 +50,7 @@ export {}
 // }
 
 /**
- * Solution 4
+ * Solution 5 - match
  */
 
 // function strStr(haystack: string, needle: string): number {
@@ -58,7 +58,7 @@ export {}
 // }
 
 /**
- * Solution 5
+ * Solution 6 - search
  */
 
 // function strStr(haystack: string, needle: string): number {
@@ -66,7 +66,7 @@ export {}
 // }
 
 /**
- * Solution 6
+ * Solution 7 - Rabin-Karp
  */
 
 // function strStr(haystack: string, needle: string): number {
@@ -109,6 +109,10 @@ export {}
 //   }
 //   return h
 // }
+
+/**
+ * Solution 8 - KMP
+ */
 
 function strStr(haystack: string, needle: string) {
   if (needle === '') return 0
