@@ -58,3 +58,19 @@ function deserialize(data: string): TreeNode | null {
  * Your functions will be called as such:
  * deserialize(serialize(root));
  */
+
+describe('test', () => {
+  const root = new TreeNode(1)
+  root.left = new TreeNode(2)
+  root.right = new TreeNode(3)
+  root.right.left = new TreeNode(4)
+  root.right.right = new TreeNode(5)
+
+  test('serialize', () => {
+    expect(serialize(root)).toBe('1,2,null,null,3,4,null,null,5,null,null')
+  })
+
+  test('deserialize', () => {
+    expect(deserialize(serialize(root))).toStrictEqual(root)
+  })
+})
