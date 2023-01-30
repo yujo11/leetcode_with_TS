@@ -11,7 +11,7 @@ function evalRPN(tokens: string[]): number {
   const nums: number[] = []
 
   for (const token of tokens) {
-    // * 연산자 일 떄
+    // * 연산자일 때
     if (ops.includes(token)) {
       const numA = nums.pop() ?? 0
       const numB = nums.pop() ?? 0
@@ -21,7 +21,7 @@ function evalRPN(tokens: string[]): number {
       continue
     }
 
-    // * 숫자 일 떄
+    // * 숫자일 때
     nums.push(+token)
   }
 
