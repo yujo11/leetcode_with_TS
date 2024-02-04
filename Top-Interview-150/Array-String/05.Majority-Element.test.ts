@@ -41,19 +41,20 @@
  */
 function majorityElement(nums: number[]): number {
   let counter = 0
-  let candidate = -1
+  let candidate = 0
 
-  for (let i = 1; i < nums.length; i++) {
+  for (const num of nums) {
     if (counter === 0) {
-      candidate = nums[i]
+      candidate = num
     }
 
-    if (nums[i] === candidate) {
+    if (num === candidate) {
       counter++
     } else {
       counter--
     }
   }
+
   return candidate
 }
 
